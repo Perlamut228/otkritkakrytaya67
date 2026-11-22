@@ -53,7 +53,7 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 .bub{position:absolute;color:var(--fg);animation:rise 3s ease-in forwards}
 @keyframes rise{to{transform:translateY(-60vh);opacity:0}}
 .sleigh{position:fixed;top:14vh;left:0;z-index:7;color:var(--acc);font-weight:700;white-space:pre;animation:swim 7s linear forwards;pointer-events:none}
-[hidden]{display:none!important}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
+[hidden]{display:none!important}body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
 @media (prefers-reduced-motion:reduce){.l,.rb,.hat.fly,h1::after,#wave i,#santa{animation:none}}
 </style>
 </head>
@@ -249,6 +249,7 @@ function checkGift(){
   if(!seen){try{localStorage.setItem('sonya-santa','1')}catch(e){}$('#santa').hidden=false;toast('Ш-ш-ш... Дед Мороз уходит на цыпочках');setTimeout(()=>{$('#santa').hidden=true},9500)}
 }
 checkGift();setInterval(checkGift,1000);
+['copy','cut','contextmenu','selectstart','dragstart'].forEach(v=>document.addEventListener(v,e=>e.preventDefault()));
 </script>
 </body>
 </html>
