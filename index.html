@@ -212,10 +212,12 @@ document.addEventListener('click',e=>{
 /* кот, домик, подарок */
 
 const BS=String.fromCharCode(92),LAST=Date.UTC(2026,11,31)/864e5,KEY='sonya-cat-v1',TG='';
-const dayNum=()=>{const p={};new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Kyiv',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(x=>p[x.type]=x.value);return Date.UTC(+p.year,+p.month-1,+p.day)/864e5};
+const dayNum=()=>{const p={};new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Kiev',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(x=>p[x.type]=x.value);return Date.UTC(+p.year,+p.month-1,+p.day)/864e5};
 let st={s:dayNum(),f:0},hEyes='o.o';
-try{const r=JSON.parse(localStorage.getItem(KEY));if(r&&r.s)st=r}catch(e){}
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};save();
+let okLS=true,raw=null;const ck=()=>{const m=document.cookie.match(/(?:^|; )sonya=([^;]*)/);return m?decodeURIComponent(m[1]):null};
+try{raw=localStorage.getItem(KEY)}catch(e){okLS=false}
+try{const r=JSON.parse(raw||ck()||'null');if(r&&r.s)st=r}catch(e){}
+const save=()=>{const j=JSON.stringify(st);try{localStorage.setItem(KEY,j)}catch(e){okLS=false}try{document.cookie='sonya='+encodeURIComponent(j)+'; max-age=31536000; path=/; SameSite=Lax'}catch(e){}};save();
 const total=()=>Math.max(0,LAST-st.s+1),owed=()=>Math.max(0,Math.min(dayNum(),LAST)-st.s+1),hungry=()=>st.f<owed(),say=t=>$('#say').textContent=t;
 function bowl(){const a=hungry()?'(   )':'(~~~)',t=`${a}
 ${BS}___/`;$('#bowl').textContent=t;$('#hbowl').textContent=t}
@@ -234,7 +236,7 @@ function paint(){
   $('#feed').disabled=!hungry();
 }
 bowl();
-E.bowl=()=>{hEyes='o.o';say(mood());paint();$('#house').hidden=false};
+E.bowl=()=>{hEyes='o.o';say(mood());paint();$('#house').hidden=false;if(!okLS&&!document.cookie.includes('sonya='))toast('Браузер не сохраняет прогресс. Открой ссылку в Safari или Chrome, не в приложении')};
 $('#back').onclick=()=>{$('#house').hidden=true;bowl()};
 $('#feed').onclick=()=>{if(!hungry())return;st.f++;save();hEyes='^.^';say('Ням-ням-ням!');paint();setTimeout(()=>{hEyes='o.o';say(mood());paint()},1400)};
 E.gift=()=>{if(TG)$('#tg').href=TG;else toast('Ссылка на Telegram ещё не добавлена');$('#gm').hidden=false};
