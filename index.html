@@ -159,7 +159,7 @@ addEventListener('pointermove',e=>{const n=Date.now();if(n-lastT<60)return;lastT
 /* пасхалки */
 const found=new Set();
 function mark(id){
-  if(found.has(id)||id==='bowl'||id==='gift')return;found.add(id);
+  if(found.has(id)||id==='bowl'||id==='gift')return;found.add(id);st.e=[...found];save();
   $('#score').textContent=`пасхалок найдено: ${found.size}/8`;
   if(found.size===8)setTimeout(()=>{toast(`ВСЕ 8 НАЙДЕНО! ${who().toUpperCase()}, ТЫ ЛУЧШАЯ! С НОВЫМ ГОДОМ!`);E.water();for(let i=0;i<8;i++)setTimeout(()=>E.star(Math.random()*innerWidth,innerHeight*.4*Math.random()+60),i*300)},1500);
 }
@@ -217,6 +217,7 @@ let st={s:dayNum(),f:0},hEyes='o.o';
 let okLS=true,raw=null;const ck=()=>{const m=document.cookie.match(/(?:^|; )sonya=([^;]*)/);return m?decodeURIComponent(m[1]):null};
 try{raw=localStorage.getItem(KEY)}catch(e){okLS=false}
 try{const r=JSON.parse(raw||ck()||'null');if(r&&r.s)st=r}catch(e){}
+(st.e||[]).forEach(x=>found.add(x));$('#score').textContent=`пасхалок найдено: ${found.size}/8`;
 const save=()=>{const j=JSON.stringify(st);try{localStorage.setItem(KEY,j)}catch(e){okLS=false}try{document.cookie='sonya='+encodeURIComponent(j)+'; max-age=31536000; path=/; SameSite=Lax'}catch(e){}};save();
 const total=()=>Math.max(0,LAST-st.s+1),owed=()=>Math.max(0,Math.min(dayNum(),LAST)-st.s+1),hungry=()=>st.f<owed(),say=t=>$('#say').textContent=t;
 function bowl(){const a=hungry()?'(   )':'(~~~)',t=`${a}
