@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>С Новым годом!</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8f1fb;--fg:#13214d;--dim:#4a5f94;--acc:#d9531e;--l1:#d9531e;--l2:#1b7a4a;--l3:#7a3fc4;--water:#2b78d655;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1030;--fg:#d6e8ff;--dim:#7f95cf;--acc:#ff9f43;--l1:#ff9f43;--l2:#6dffb0;--l3:#ff7ad9;--water:#2f8cff55}}
+:root[data-theme="dark"]{--bg:#0a1030;--fg:#d6e8ff;--dim:#7f95cf;--acc:#ff9f43;--l1:#ff9f43;--l2:#6dffb0;--l3:#ff7ad9;--water:#2f8cff55}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--fg);font:15px/1.1 "IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;overflow-x:hidden;touch-action:manipulation}
+canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:28px 16px 70px;text-align:center}
+h1{font-size:clamp(22px,6vw,34px);line-height:1.25;margin:0 0 10px;letter-spacing:.02em}
+h1::after{content:"_";animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+#who{border-bottom:2px dashed var(--acc);cursor:pointer}
+.rb{animation:rb .6s linear 4}
+@keyframes rb{0%{color:#f55}25%{color:#fc3}50%{color:#4d8}75%{color:#4af}100%{color:#f5c}}
+p{margin:6px 0;color:var(--dim);line-height:1.5}
+pre{font:inherit;margin:0;display:inline-block;text-align:left;white-space:pre}
+[data-e]{cursor:pointer}
+#tree{font-size:clamp(12px,3.6vw,17px);margin:22px 0 8px}
+.l{animation:tw 1.4s steps(2) infinite;animation-delay:var(--d)}
+.c0{color:var(--l1)}.c1{color:var(--l2)}.c2{color:var(--l3)}
+@keyframes tw{50%{opacity:.15}}
+#star{color:var(--acc);font-weight:700}
+.row{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin:18px 0}
+.hat{display:inline-block}.hat.fly{animation:fly 1.2s ease-in}
+@keyframes fly{40%{transform:translate(18px,-60px) rotate(40deg)}100%{transform:translate(0,0) rotate(0)}}
+button{font:inherit;font-weight:700;background:none;color:var(--fg);border:2px solid var(--fg);padding:10px 14px;cursor:pointer}
+button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:none}
+#cd{margin:14px 0;font-weight:700;color:var(--acc);cursor:pointer;user-select:none}
+#fate{margin:12px 0;min-height:2.6em;color:var(--fg)}
+#score{margin-top:22px}
+.pop{position:fixed;z-index:6;pointer-events:none;font-weight:700;animation:pop .9s ease-out forwards}
+@keyframes pop{to{transform:translate(var(--dx),var(--dy)) scale(.4);opacity:0}}
+.fall{position:fixed;top:-40px;z-index:6;color:var(--acc);font-weight:700;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(115vh) rotate(200deg)}}
+#toast{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:9px 14px;z-index:20;opacity:0;transition:opacity .3s;max-width:92vw;text-align:center;line-height:1.3;pointer-events:none}
+#toast.on{opacity:1}
+#water{position:fixed;left:0;right:0;bottom:0;height:0;background:var(--water);z-index:5;transition:height 2.4s ease;pointer-events:none}
+#water.on{height:100vh}
+#wave{position:absolute;top:-1.15em;left:0;white-space:pre;color:var(--fg);overflow:hidden;width:100%}
+#wave i{display:inline-block;font-style:normal;animation:wv 3s linear infinite}
+@keyframes wv{to{transform:translateX(-6ch)}}
+.fish{position:absolute;left:0;color:var(--fg);font-weight:700;white-space:pre;animation:swim linear forwards}
+@keyframes swim{from{transform:translateX(var(--a))}to{transform:translateX(var(--b))}}
+.bub{position:absolute;color:var(--fg);animation:rise 3s ease-in forwards}
+@keyframes rise{to{transform:translateY(-60vh);opacity:0}}
+.sleigh{position:fixed;top:14vh;left:0;z-index:7;color:var(--acc);font-weight:700;white-space:pre;animation:swim 7s linear forwards;pointer-events:none}
+[hidden]{display:none!important}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
+@media (prefers-reduced-motion:reduce){.l,.rb,.hat.fly,h1::after,#wave i,#santa{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="snow"></canvas>
+<main>
+<p class='sky'>* . + <b data-e='sleigh'>(C</b> . * +</p>
+<h1><span id='greet'>С наступающим Новым годом</span>, <span id='who' data-e='name'>Соня</span>!</h1>
+<pre id='tree'></pre>
+<div id='under'><pre id='gift' data-e='gift' hidden>  (_*_)
+ [==|==]
+ [__|__]</pre><pre id='santa' hidden>  ш-ш-ш..
+  .-^-.
+  (o_o)
+  /|#|\
+   / \</pre></div>
+<div class="row">
+<pre id="cat" data-e="cat"></pre>
+<pre id='bowl' data-e='bowl'></pre>
+<pre data-e="snowman">  <span class="hat" id="hat">_===_</span>
+ \(o,o)/
+  ( : )
+  (" ")</pre>
+</div>
+<div id="cd" data-e="clock"></div>
+<p id="score">пасхалок найдено: 0/8</p>
+</main>
+<div id="water"><div id="wave"></div></div>
+<div class='ov' id='house' hidden><pre id='hart'></pre> <pre id='hbowl'></pre><p id='say'></p><p id='stat'></p><button id='feed'>[ покормить ]</button> <button id='back'>[ назад ]</button></div>
+<div class='ov' id='gm' hidden><pre>  (_*_)
+ [==|==]
+ [__|__]</pre><p>Твой подарок ждёт тебя в Telegram.</p><a class='btn' id='tg' href='#' target='_blank' rel='noopener'>[ открыть подарок ]</a> <button id='gx'>[ закрыть ]</button></div>
+<div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),R=a=>a[Math.random()*a.length|0];
+const who=()=>$('#who').textContent;
+let frozen=false;const NY=new Date('2027-01-01T00:00:00+02:00'),isNY=()=>Date.now()>=NY||location.hash==='#ny';
+
+/* ёлка */
+(function(){
+  const N=12,pad=n=>' '.repeat(n),f=".:*^'";
+  let h=pad(N-2)+'<b id="star" data-e="star">\\|/</b>\n'+pad(N-2)+'<b data-e="star">-*-</b>\n';
+  for(let i=0;i<N;i++){
+    let m='';
+    for(let k=0;k<2*i;k++){
+      m+=Math.random()<.2?`<span class="l c${Math.random()*3|0}" style="--d:${(Math.random()*1.4).toFixed(2)}s">o</span>`:R(f.split(''));
+    }
+    h+=pad(N-1-i)+'/'+m+'\\\n';
+  }
+  h+=pad(N-2)+'<b data-e="water">|_|</b>\n'+pad(N-2)+'<b data-e="water">|_|</b>';
+  $('#tree').innerHTML=h;
+})();
+
+/* кот */
+const catArt=e=>' /\\_/\\\n( '+e+' )\n > ^ <';
+let catEyes='o.o',catN=0;
+const drawCat=()=>$('#cat').textContent=catArt(catEyes);
+drawCat();
+setInterval(()=>{if(catN>=5)return;$('#cat').textContent=catArt('-.-');setTimeout(drawCat,160)},2800);
+
+/* обратный отсчёт */
+function tick(){
+  const n=new Date(),ny=NY,p=x=>String(x).padStart(2,'0');
+  if(n>=NY){$('#cd').textContent='[ УРА! УЖЕ НОВЫЙ ГОД! ]';return}
+  const s=Math.floor((ny-n)/1000);
+  $('#cd').textContent=`[ ${Math.floor(s/86400)} дн ${p(Math.floor(s%86400/3600))} ч ${p(Math.floor(s%3600/60))} мин ${p(s%60)} с ]`;
+}
+tick();setInterval(tick,1000);
+
+/* снег из символов */
+const cv=$('#snow'),cx=cv.getContext('2d'),fl=[];
+function size(){cv.width=innerWidth;cv.height=innerHeight}
+size();addEventListener('resize',size);
+for(let i=0;i<90;i++)fl.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,v:.4+Math.random()*1.1,s:10+Math.random()*10,c:R(['*','.','+','·','*'])});
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function snow(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  cx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--dim');
+  for(const f of fl){
+    if(!frozen&&!reduce){f.y+=f.v;f.x+=Math.sin(f.y/40)*.3;if(f.y>cv.height+10){f.y=-10;f.x=Math.random()*cv.width}}
+    cx.font=f.s+'px monospace';cx.fillText(f.c,f.x,f.y);
+  }
+  requestAnimationFrame(snow);
+}
+snow();
+
+/* утилиты */
+function burst(x,y,chars,n,r){
+  for(let i=0;i<n;i++){
+    const e=document.createElement('span');e.className='pop';e.textContent=R(chars);
+    e.style.left=x+'px';e.style.top=y+'px';e.style.fontSize=(12+Math.random()*14)+'px';
+    e.style.color=R(['var(--l1)','var(--l2)','var(--l3)','var(--fg)']);
+    const a=Math.random()*6.28,d=r*(.4+Math.random()*.6);
+    e.style.setProperty('--dx',Math.cos(a)*d+'px');e.style.setProperty('--dy',Math.sin(a)*d+'px');
+    document.body.appendChild(e);setTimeout(()=>e.remove(),950);
+  }
+}
+let tt;
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('on'),2800)}
+let lastT=0;
+addEventListener('pointermove',e=>{const n=Date.now();if(n-lastT<60)return;lastT=n;burst(e.clientX,e.clientY,['·','*','+'],1,24)});
+
+/* пасхалки */
+const found=new Set();
+function mark(id){
+  if(found.has(id)||id==='bowl'||id==='gift')return;found.add(id);
+  $('#score').textContent=`пасхалок найдено: ${found.size}/8`;
+  if(found.size===8)setTimeout(()=>{toast(`ВСЕ 8 НАЙДЕНО! ${who().toUpperCase()}, ТЫ ЛУЧШАЯ! С НОВЫМ ГОДОМ!`);E.water();for(let i=0;i<8;i++)setTimeout(()=>E.star(Math.random()*innerWidth,innerHeight*.4*Math.random()+60),i*300)},1500);
+}
+const E={
+  star(x,y){burst(x,y,['*','+','x','o','.','#'],34,150);toast('Салют! ✦ (пасхалка 1)')},
+  water(){
+    const w=$('#water');if(w.classList.contains('on'))return;
+    $('#wave').innerHTML='<i>'+'~~^~~~'.repeat(80)+'</i>';
+    w.classList.add('on');toast('Потоп! Держись, сейчас приплывут...');
+    const fs=['><(((º>','<º)))><','><>','<><','><(((\'>','<\')))><'];let n=0;
+    const iv=setInterval(()=>{
+      const f=document.createElement('div'),s=R(fs),r=s.startsWith('>');
+      f.className='fish';f.textContent=s;f.style.top=(8+Math.random()*80)+'%';
+      f.style.setProperty('--a',r?'-15vw':'105vw');f.style.setProperty('--b',r?'105vw':'-15vw');
+      f.style.animationDuration=(4+Math.random()*5)+'s';f.style.fontSize=(14+Math.random()*10)+'px';
+      w.appendChild(f);setTimeout(()=>f.remove(),9500);
+      if(Math.random()<.6){const b=document.createElement('div');b.className='bub';b.textContent=R(['o','O','°']);b.style.left=Math.random()*100+'%';b.style.top=(40+Math.random()*50)+'%';w.appendChild(b);setTimeout(()=>b.remove(),3100)}
+      if(++n>34){clearInterval(iv);setTimeout(()=>{w.classList.remove('on');toast('Вода ушла. Рыбки были настоящие, честно.')},4500)}
+    },230);
+  },
+  cat(x,y){
+    catN++;
+    if(catN<5){toast(R(['Мяу!','Мрр...','Мяу-мяу!','Покорми кота!']));catEyes='^.^';drawCat();setTimeout(()=>{if(catN<5){catEyes='o.o';drawCat()}},700)}
+    else{catEyes='>_<';drawCat();toast('ХВАТИТ ТЫКАТЬ!! (кот обиделся)');burst(x,y,['!','#','@'],14,90)}
+  },
+  snowman(){const h=$('#hat');h.classList.remove('fly');void h.offsetWidth;h.classList.add('fly');toast('Ой, шляпа улетела!')},
+  clock(){frozen=!frozen;toast(frozen?'Время остановилось. Снег замер.':'Время пошло дальше.')},
+  name(){const w=$('#who');w.classList.remove('rb');void w.offsetWidth;w.classList.add('rb');toast(who()+' — звезда этого года!')},
+  sleigh(){
+    const s=document.createElement('pre');s.className='sleigh';
+    s.style.setProperty('--a','105vw');s.style.setProperty('--b','-60vw');
+    s.textContent="  ,~~  ,~~  ,~~\n =(o)>=(o)>=(o)> ___\n ~~~~~~~~~~~~~~ [_Д.М._]=\n HO-HO-HO!";
+    document.body.appendChild(s);setTimeout(()=>s.remove(),7200);toast('Дед Мороз пролетел мимо!');
+  },
+  rain(){
+    toast('Мандариновый дождь!');
+    for(let i=0;i<36;i++){const e=document.createElement('span');e.className='fall';e.textContent='(@)';e.style.left=Math.random()*(innerWidth-30)+'px';e.style.animationDelay=Math.random()*2+'s';e.style.animationDuration=(3+Math.random()*3)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),8000)}
+  }
+};
+let lastTap=0;
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-e]');
+  if(t){E[t.dataset.e](e.clientX,e.clientY);mark(t.dataset.e);return}
+  if(e.target.closest('button,.ov'))return;
+  const n=Date.now();
+  if(n-lastTap<350){E.rain();mark('rain')}
+  lastTap=n;
+});
+
+/* кот, домик, подарок */
+
+const BS=String.fromCharCode(92),LAST=Date.UTC(2026,11,31)/864e5,KEY='sonya-cat-v1',TG='';
+const dayNum=()=>{const p={};new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Kyiv',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(x=>p[x.type]=x.value);return Date.UTC(+p.year,+p.month-1,+p.day)/864e5};
+let st={s:dayNum(),f:0},hEyes='o.o';
+try{const r=JSON.parse(localStorage.getItem(KEY));if(r&&r.s)st=r}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};save();
+const total=()=>Math.max(0,LAST-st.s+1),owed=()=>Math.max(0,Math.min(dayNum(),LAST)-st.s+1),hungry=()=>st.f<owed(),say=t=>$('#say').textContent=t;
+function bowl(){const a=hungry()?'(   )':'(~~~)',t=`${a}
+${BS}___/`;$('#bowl').textContent=t;$('#hbowl').textContent=t}
+const hart=e=>['    /'+BS,'   /  '+BS,'  /    '+BS,' /      '+BS,'/________'+BS,'|  /'+BS+'_/'+BS+' |','| ( '+e+' )|','|  > ^ < |','|________|'].join(`
+`);
+function mood(){
+  if(st.f>=total())return dayNum()>LAST?'С Новым годом! Подарок уже под ёлкой. Мур!':'В новогоднюю ночь проверь подарки под ёлкой';
+  if(owed()-1-st.f>0)return 'Мне не хватало тебя... и еды. Мяу';
+  return hungry()?'Мяу! Я голодный. Покормишь?':'Мур. Я сыт! Приходи завтра';
+}
+function paint(){
+  const t=total(),n=Math.min(st.f,t),k=t?Math.round(n/t*20):20;
+  $('#hart').textContent=hart(hEyes);bowl();
+  $('#stat').textContent=`накормлен: ${n} из ${t} дней
+[${'#'.repeat(k)}${'-'.repeat(20-k)}]`;
+  $('#feed').disabled=!hungry();
+}
+bowl();
+E.bowl=()=>{hEyes='o.o';say(mood());paint();$('#house').hidden=false};
+$('#back').onclick=()=>{$('#house').hidden=true;bowl()};
+$('#feed').onclick=()=>{if(!hungry())return;st.f++;save();hEyes='^.^';say('Ням-ням-ням!');paint();setTimeout(()=>{hEyes='o.o';say(mood());paint()},1400)};
+E.gift=()=>{if(TG)$('#tg').href=TG;else toast('Ссылка на Telegram ещё не добавлена');$('#gm').hidden=false};
+$('#gx').onclick=()=>{$('#gm').hidden=true};
+function checkGift(){
+  if(isNY())$('#greet').textContent='С Новым годом';if(!isNY()||!$('#gift').hidden)return;
+  $('#gift').hidden=false;
+  let seen=null;try{seen=localStorage.getItem('sonya-santa')}catch(e){}
+  if(!seen){try{localStorage.setItem('sonya-santa','1')}catch(e){}$('#santa').hidden=false;toast('Ш-ш-ш... Дед Мороз уходит на цыпочках');setTimeout(()=>{$('#santa').hidden=true},9500)}
+}
+checkGift();setInterval(checkGift,1000);
+</script>
+</body>
+</html>
