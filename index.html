@@ -53,12 +53,15 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 .bub{position:absolute;color:var(--fg);animation:rise 3s ease-in forwards}
 @keyframes rise{to{transform:translateY(-60vh);opacity:0}}
 .sleigh{position:fixed;top:14vh;left:0;z-index:7;color:var(--acc);font-weight:700;white-space:pre;animation:swim 7s linear forwards;pointer-events:none}
-[hidden]{display:none!important}body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}input{font:inherit;color:var(--fg);background:none;border:2px solid var(--fg);border-radius:0;padding:10px;-webkit-user-select:text;user-select:text}#letter{white-space:pre-wrap;text-align:left;max-width:520px;margin:14px auto;line-height:1.5;min-height:8em}#letter::after{content:'_';animation:blink 1s steps(2) infinite}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
+[hidden]{display:none!important}body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}input{font:inherit;color:var(--fg);background:none;border:2px solid var(--fg);border-radius:0;padding:10px;-webkit-user-select:text;user-select:text}#letter{white-space:pre-wrap;text-align:left;max-width:520px;margin:14px auto;line-height:1.5;min-height:8em}#letter::after{content:'_';animation:blink 1s steps(2) infinite}#sh,#ul{white-space:pre-line;max-width:520px;margin:12px auto;line-height:1.5}#sh{color:var(--dim)}#ul{text-align:left;white-space:pre-wrap}#bell{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));right:8px;z-index:8;padding:4px 8px;border:2px solid var(--fg);background:var(--bg)}#bell pre{font-size:11px;line-height:1}#badge{position:absolute;top:-9px;right:-7px;background:var(--acc);color:var(--bg);font-size:13px;padding:0 6px}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
 @media (prefers-reduced-motion:reduce){.l,.rb,.hat.fly,h1::after,#wave i,#santa{animation:none}}
 </style>
 </head>
 <body>
 <canvas id="snow"></canvas>
+<button id='bell' aria-label='Обновления'><pre> ,-.
+/   \
+'-o-'</pre><b id='badge' hidden>*</b></button>
 <main>
 <p class='sky'>* . + <b data-e='sleigh'>(C</b> . * +</p>
 <h1><span id='greet'>С наступающим Новым годом</span>, <span id='who' data-e='name'>Соня</span>!</h1>
@@ -87,8 +90,9 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 <div class='ov' id='gm' hidden><pre>  (_*_)
  [==|==]
  [__|__]</pre><div id='letter'></div><a class='btn' id='tg' href='#' target='_blank' rel='noopener' hidden>[ открыть подарок ]</a> <button id='gx'>[ закрыть ]</button></div>
-<div class='ov' id='sec' hidden><p>Секретное слово</p><input id='sw' autocomplete='off' autocapitalize='off' spellcheck='false'> <button id='sg'>[ ввод ]</button><p id='sm'></p><button id='sx'>[ закрыть ]</button></div>
-<div class='ov' id='adm' hidden><p>[ админ-панель ]</p><button id='nyb'>[ Новый год ]</button><p>Запустит отсчёт: 10 секунд до Нового года. Только у тебя, после перезагрузки всё вернётся.</p><button id='adx'>[ закрыть ]</button></div>
+<div class='ov' id='sec' hidden><p>Секретное слово</p><input id='sw' autocomplete='off' autocapitalize='off' spellcheck='false'> <button id='sg'>[ ввод ]</button><p id='sm'></p><p id='sh'></p><button id='sx'>[ закрыть ]</button></div>
+<div class='ov' id='adm' hidden><p>[ админ-панель ]</p><button id='nyb'>[ Новый год ]</button> <button id='tb'>[ Тест колокольчика ]</button><p>Запустит отсчёт: 10 секунд до Нового года. Только у тебя, после перезагрузки всё вернётся.</p><button id='adx'>[ закрыть ]</button></div>
+<div class='ov' id='upd' hidden><p>[ обновления ]</p><div id='ul'></div><button id='ux'>[ закрыть ]</button></div>
 <div id="toast"></div>
 <script>
 const $=s=>document.querySelector(s),R=a=>a[Math.random()*a.length|0];
@@ -98,7 +102,7 @@ let frozen=false,sim=0;const now=()=>Date.now()+sim,NY=new Date('2027-01-01T00:0
 /* ёлка */
 (function(){
   const N=12,pad=n=>' '.repeat(n),f=".:*^'";
-  let h=pad(N-2)+'<b id="star" data-e="star">\\|/</b>\n'+pad(N-2)+'<b data-e="star">-*-</b>\n';
+  let h=pad(N-2)+'<b id="star" data-e="star">\\||/</b>\n'+pad(N-2)+'<b data-e="star">-**-</b>\n';
   for(let i=0;i<N;i++){
     let m='';
     for(let k=0;k<2*i;k++){
@@ -106,7 +110,7 @@ let frozen=false,sim=0;const now=()=>Date.now()+sim,NY=new Date('2027-01-01T00:0
     }
     h+=pad(N-1-i)+'/'+m+'\\\n';
   }
-  h+=pad(N-2)+'<b data-e="water">|_|</b>\n'+pad(N-2)+'<b data-e="water">|_|</b>';
+  h+=pad(N-2)+'<b data-e="water">|__|</b>\n'+pad(N-2)+'<b data-e="water">|__|</b>';
   $('#tree').innerHTML=h;
 })();
 
@@ -280,12 +284,27 @@ function checkGift(){
 }
 let wasPre=!isNY();
 const party=()=>{toast('С НОВЫМ ГОДОМ!');for(let i=0;i<8;i++)setTimeout(()=>burst(Math.random()*innerWidth,innerHeight*(.15+Math.random()*.4),['*','+','x','o','.','#'],34,150),i*350)};
-const SECRET=null;
+const WORDS=[{ok:['ультра редкий','ультра ледкий'],h:'Адопт ми фраза',need:5},{ok:['дарк романс','dark romance'],h:'Вы это придумали с Настей',need:10}];
+const norm=s=>s.toLowerCase().replace(/ё/g,'е').replace(/\s+/g,' ').trim();
+function hints(){$('#sh').textContent=WORDS.map((w,i)=>`Слово ${i+1}${(st.w||[]).includes(i)?' ✓':''}. Подсказка: ${st.f>=w.need?w.h:`откроется после ${w.need} кормлений кота (сейчас ${Math.min(st.f,w.need)})`}`).join(`
+`)}
+const UPDATES=[];
+const MON=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+let testBell=false;
+const dn=d=>{const p=d.split('-');return Date.UTC(+p[0],+p[1]-1,+p[2])/864e5};
+const visUpd=()=>UPDATES.filter(u=>dn(u.d)>=dn('2026-12-01')&&dn(u.d)<=dayNum()).concat(testBell?[{d:'2026-12-01',t:'Тестовое обновление: так будет выглядеть новая запись.'}]:[]);
+function bell(){$('#badge').hidden=!(visUpd().length>(st.u||0))}
+$('#bell').onclick=()=>{const v=visUpd();$('#ul').textContent=v.length?v.slice().reverse().map(u=>{const p=u.d.split('-');return `${+p[2]} ${MON[+p[1]-1]}: ${u.t}`}).join(`
+
+`):'Пока тут пусто. Здесь появятся новинки сайта.';if(!testBell){st.u=v.length;save()}bell();$('#upd').hidden=false};
+$('#ux').onclick=()=>{$('#upd').hidden=true};
+$('#tb').onclick=()=>{testBell=true;bell();$('#adm').hidden=true;toast('Тестовое обновление добавлено, нажми на колокольчик')};
+bell();
 function trySecret(){const v=$('#sw').value.trim();
   if(v==='43893j228'){$('#sec').hidden=true;$('#adm').hidden=false;return}
-  if(SECRET&&v.toLowerCase()===SECRET){$('#sm').textContent='Секретная комната скоро откроется...';return}
+  const i=WORDS.findIndex(w=>w.ok.includes(norm(v)));if(i>=0){st.w=[...new Set([...(st.w||[]),i])];save();hints();$('#sm').textContent='Верно! Скоро тут появится сюрприз.';return}
   $('#sm').textContent='Не то слово. Мяу.'}
-$('#sk').onclick=()=>{$('#sw').value='';$('#sm').textContent='';$('#sec').hidden=false;$('#sw').focus()};
+$('#sk').onclick=()=>{hints();$('#sw').value='';$('#sm').textContent='';$('#sec').hidden=false;$('#sw').focus()};
 $('#sg').onclick=trySecret;$('#sw').onkeydown=e=>{if(e.key==='Enter')trySecret()};
 $('#sx').onclick=()=>{$('#sec').hidden=true};$('#adx').onclick=()=>{$('#adm').hidden=true};
 $('#nyb').onclick=()=>{sim=NY-Date.now()-10000;$('#adm').hidden=true;scrollTo(0,0);toast('10 секунд до Нового года!')};
