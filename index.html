@@ -64,7 +64,7 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 '-o-'</pre><b id='badge' hidden>*</b></button>
 <main>
 <p class='sky'>* . + <b data-e='sleigh'>(C</b> . * +</p>
-<h1><span id='greet'>С наступающим Новым годом</span>, <span id='who' data-e='name'>Соня</span>!</h1>
+<h1 data-e='name'><span id='greet'>С наступающим Новым годом</span><span id='nm' hidden>, <span id='who'>Соня</span></span>!</h1>
 <pre id='tree'></pre>
 <div id='under'><pre id='gift' data-e='gift' hidden>  (_*_)
  [==|==]
@@ -90,8 +90,9 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 <div class='ov' id='gm' hidden><pre>  (_*_)
  [==|==]
  [__|__]</pre><div id='letter'></div><a class='btn' id='tg' href='#' target='_blank' rel='noopener' hidden>[ открыть подарок ]</a> <button id='gx'>[ закрыть ]</button></div>
-<div class='ov' id='sec' hidden><p>Секретное слово</p><input id='sw' autocomplete='off' autocapitalize='off' spellcheck='false'> <button id='sg'>[ ввод ]</button><p id='sm'></p><p id='sh'></p><button id='sx'>[ закрыть ]</button></div>
+<div class='ov' id='sec' hidden><p>Секретное слово</p><input id='sw' autocomplete='off' autocapitalize='off' spellcheck='false'> <button id='sg'>[ ввод ]</button><p id='sm'></p><p id='sh'></p><button id='pb' hidden>[ мой питомец ]</button> <button id='sx'>[ закрыть ]</button></div>
 <div class='ov' id='adm' hidden><p>[ админ-панель ]</p><button id='nyb'>[ Новый год ]</button> <button id='tb'>[ Тест колокольчика ]</button><p>Запустит отсчёт: 10 секунд до Нового года. Только у тебя, после перезагрузки всё вернётся.</p><button id='adx'>[ закрыть ]</button></div>
+<div class='ov' id='egg' hidden><pre id='eart' style='cursor:pointer'></pre><p id='etxt' style='white-space:pre-line'></p><input id='en' maxlength='16' placeholder='имя питомца' hidden> <button id='eb' hidden>[ назвать ]</button><p><button id='ex'>[ закрыть ]</button></p></div>
 <div class='ov' id='upd' hidden><p>[ обновления ]</p><div id='ul'></div><button id='ux'>[ закрыть ]</button></div>
 <div id="toast"></div>
 <script>
@@ -168,7 +169,7 @@ const found=new Set();
 function mark(id){
   if(found.has(id)||id==='bowl'||id==='gift')return;found.add(id);st.e=[...found];save();
   $('#score').textContent=`пасхалок найдено: ${found.size}/8`;
-  if(found.size===8)setTimeout(()=>{toast(`ВСЕ 8 НАЙДЕНО! ${who().toUpperCase()}, ТЫ ЛУЧШАЯ! С НОВЫМ ГОДОМ!`);E.water();for(let i=0;i<8;i++)setTimeout(()=>E.star(Math.random()*innerWidth,innerHeight*.4*Math.random()+60),i*300)},1500);
+  if(found.size===8)setTimeout(()=>{toast(`ВСЕ 8 НАЙДЕНО! ${isNY()?who().toUpperCase()+', ':''}ТЫ ЛУЧШАЯ! С НОВЫМ ГОДОМ!`);E.water();for(let i=0;i<8;i++)setTimeout(()=>E.star(Math.random()*innerWidth,innerHeight*.4*Math.random()+60),i*300)},1500);
 }
 const E={
   star(x,y){burst(x,y,['*','+','x','o','.','#'],34,150);toast('Салют! ✦ (пасхалка 1)')},
@@ -194,7 +195,7 @@ const E={
   },
   snowman(){const h=$('#hat');h.classList.remove('fly');void h.offsetWidth;h.classList.add('fly');toast('Ой, шляпа улетела!')},
   clock(){frozen=!frozen;toast(frozen?'Время остановилось. Снег замер.':'Время пошло дальше.')},
-  name(){const w=$('#who');w.classList.remove('rb');void w.offsetWidth;w.classList.add('rb');toast(who()+' — звезда этого года!')},
+  name(){const w=$('h1');w.classList.remove('rb');void w.offsetWidth;w.classList.add('rb');toast(isNY()?who()+' — звезда этого года!':'С наступающим!')},
   sleigh(){
     const s=document.createElement('pre');s.className='sleigh';
     s.style.setProperty('--a','105vw');s.style.setProperty('--b','-60vw');
@@ -277,14 +278,14 @@ $('#letter').onclick=()=>{fast=true};
 E.gift=()=>{if(TG)$('#tg').href=TG;$('#gm').hidden=false;if(!typing&&!done)writeLetter()};
 $('#gx').onclick=()=>{$('#gm').hidden=true};
 function checkGift(){
-  if(isNY())$('#greet').textContent='С Новым годом';if(!isNY()||!$('#gift').hidden)return;
+  if(isNY()){$('#greet').textContent='С Новым годом';$('#nm').hidden=false}if(!isNY()||!$('#gift').hidden)return;
   $('#gift').hidden=false;if(wasPre){wasPre=false;party()}
   let seen=null;try{seen=localStorage.getItem('sonya-santa')}catch(e){}
   if(!seen||sim){if(!sim)try{localStorage.setItem('sonya-santa','1')}catch(e){}$('#santa').hidden=false;toast('Ш-ш-ш... Дед Мороз уходит на цыпочках');setTimeout(()=>{$('#santa').hidden=true},9500)}
 }
 let wasPre=!isNY();
 const party=()=>{toast('С НОВЫМ ГОДОМ!');for(let i=0;i<8;i++)setTimeout(()=>burst(Math.random()*innerWidth,innerHeight*(.15+Math.random()*.4),['*','+','x','o','.','#'],34,150),i*350)};
-const WORDS=[{ok:['ультра редкий','ультра ледкий'],h:'Адопт ми фраза',need:5},{ok:['дарк романс','dark romance'],h:'Вы это придумали с Настей',need:10}];
+const WORDS=[{ok:['ультра ледкий'],h:'Адопт ми фраза',need:5},{ok:['дарк романс','dark romance'],h:'Вы это придумали с Настей',need:10}];
 const norm=s=>s.toLowerCase().replace(/ё/g,'е').replace(/\s+/g,' ').trim();
 function hints(){$('#sh').textContent=WORDS.map((w,i)=>`Слово ${i+1}${(st.w||[]).includes(i)?' ✓':''}. Подсказка: ${st.f>=w.need?w.h:`откроется после ${w.need} кормлений кота (сейчас ${Math.min(st.f,w.need)})`}`).join(`
 `)}
@@ -298,13 +299,32 @@ $('#bell').onclick=()=>{const v=visUpd();$('#ul').textContent=v.length?v.slice()
 
 `):'Пока тут пусто. Здесь появятся новинки сайта.';if(!testBell){st.u=v.length;save()}bell();$('#upd').hidden=false};
 $('#ux').onclick=()=>{$('#upd').hidden=true};
+const eggArt=s=>[`   ,---.`,`  /     ${BS}`,` |${['   o   ',' /'+BS+'  o ','/'+BS+'/'+BS+'/'+BS+' '][s]}|`,`  ${BS}     /`,`   '---'`].join(`
+`);
+const petArt=[' *  .-.  * ','   (o o)  ',` * /| |${BS} * `,'    ^ ^   '].join(`
+`);
+let taps=0;
+function eggView(){
+  const p=st.p;
+  if(p&&p.n){$('#eart').textContent=petArt;$('#etxt').textContent=`${p.n}
+редкость: ультра ледкий
+характер: смешной, ледкий`;$('#en').hidden=true;$('#eb').hidden=true;return}
+  if(p){$('#eart').textContent=petArt;$('#etxt').textContent='Вылупился ультра ледкий питомец! Как его назовёшь?';$('#en').hidden=false;$('#eb').hidden=false;return}
+  $('#eart').textContent=eggArt(Math.min(taps,2));
+  $('#etxt').textContent=taps?`Трескается... нажми ещё ${3-taps}`:'Тебе подарили яйцо! Нажми на него.';
+  $('#en').hidden=true;$('#eb').hidden=true;
+}
+$('#eart').onclick=()=>{if(st.p)return;taps++;if(taps>=3){st.p={n:''};save();burst(innerWidth/2,innerHeight/3,['*','+','o','.','#'],30,140)}eggView()};
+$('#eb').onclick=()=>{const n=$('#en').value.trim().slice(0,16);if(!n){toast('Придумай имя');return}st.p.n=n;save();eggView();toast(n+' теперь с тобой!')};
+$('#ex').onclick=()=>{$('#egg').hidden=true};
+$('#pb').onclick=()=>{$('#sec').hidden=true;taps=0;eggView();$('#egg').hidden=false};
 $('#tb').onclick=()=>{testBell=true;bell();$('#adm').hidden=true;toast('Тестовое обновление добавлено, нажми на колокольчик')};
 bell();
 function trySecret(){const v=$('#sw').value.trim();
   if(v==='43893j228'){$('#sec').hidden=true;$('#adm').hidden=false;return}
-  const i=WORDS.findIndex(w=>w.ok.includes(norm(v)));if(i>=0){st.w=[...new Set([...(st.w||[]),i])];save();hints();$('#sm').textContent='Верно! Скоро тут появится сюрприз.';return}
+  const i=WORDS.findIndex(w=>w.ok.includes(norm(v)));if(i>=0){st.w=[...new Set([...(st.w||[]),i])];save();hints();if(i===0){$('#sec').hidden=true;taps=0;eggView();$('#egg').hidden=false}else $('#sm').textContent='Верно! Скоро тут появится сюрприз.';return}
   $('#sm').textContent='Не то слово. Мяу.'}
-$('#sk').onclick=()=>{hints();$('#sw').value='';$('#sm').textContent='';$('#sec').hidden=false;$('#sw').focus()};
+$('#sk').onclick=()=>{hints();$('#pb').hidden=!(st.w||[]).includes(0);$('#sw').value='';$('#sm').textContent='';$('#sec').hidden=false;$('#sw').focus()};
 $('#sg').onclick=trySecret;$('#sw').onkeydown=e=>{if(e.key==='Enter')trySecret()};
 $('#sx').onclick=()=>{$('#sec').hidden=true};$('#adx').onclick=()=>{$('#adm').hidden=true};
 $('#nyb').onclick=()=>{sim=NY-Date.now()-10000;$('#adm').hidden=true;scrollTo(0,0);toast('10 секунд до Нового года!')};
