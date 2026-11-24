@@ -89,7 +89,7 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 <div class='ov' id='house' hidden><pre id='hart'></pre> <pre id='hbowl'></pre><p id='say'></p><p id='stat'></p><button id='feed'>[ покормить ]</button> <button id='back'>[ назад ]</button></div>
 <div class='ov' id='gm' hidden><pre>  (_*_)
  [==|==]
- [__|__]</pre><div id='letter'></div><a class='btn' id='tg' href='#' target='_blank' rel='noopener' hidden>[ открыть подарок ]</a> <button id='gx'>[ закрыть ]</button></div>
+ [__|__]</pre><div id='letter'></div><a class='btn' id='tg' href='#' target='_blank' rel='noopener' hidden>[ забрать подарок в Telegram ]</a> <button id='gx'>[ закрыть ]</button></div>
 <div class='ov' id='sec' hidden><p>Секретное слово</p><input id='sw' autocomplete='off' autocapitalize='off' spellcheck='false'> <button id='sg'>[ ввод ]</button><p id='sm'></p><p id='sh'></p><button id='pb' hidden>[ мой питомец ]</button> <button id='sx'>[ закрыть ]</button></div>
 <div class='ov' id='adm' hidden><p>[ админ-панель ]</p><button id='nyb'>[ Новый год ]</button> <button id='tb'>[ Тест колокольчика ]</button><p>Запустит отсчёт: 10 секунд до Нового года. Только у тебя, после перезагрузки всё вернётся.</p><button id='adx'>[ закрыть ]</button></div>
 <div class='ov' id='egg' hidden><pre id='eart' style='cursor:pointer'></pre><p id='etxt' style='white-space:pre-line'></p><input id='en' maxlength='16' placeholder='имя питомца' hidden> <button id='eb' hidden>[ назвать ]</button><p><button id='ex'>[ закрыть ]</button></p></div>
@@ -219,7 +219,7 @@ document.addEventListener('click',e=>{
 
 /* кот, домик, подарок */
 
-const BS=String.fromCharCode(92),LAST=Date.UTC(2026,11,31)/864e5,KEY='sonya-cat-v1',TG='';
+const BS=String.fromCharCode(92),LAST=Date.UTC(2026,11,31)/864e5,KEY='sonya-cat-v1',TG='https://t.me/Kriogenka?text='+encodeURIComponent('Гони подарок');
 const dayNum=()=>{const p={};new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Kiev',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(x=>p[x.type]=x.value);return Date.UTC(+p.year,+p.month-1,+p.day)/864e5};
 let st={s:dayNum(),f:0},hEyes='o.o';
 let okLS=true,raw=null;const ck=()=>{const m=document.cookie.match(/(?:^|; )sonya=([^;]*)/);return m?decodeURIComponent(m[1]):null};
