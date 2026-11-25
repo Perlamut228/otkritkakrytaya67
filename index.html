@@ -53,12 +53,13 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 .bub{position:absolute;color:var(--fg);animation:rise 3s ease-in forwards}
 @keyframes rise{to{transform:translateY(-60vh);opacity:0}}
 .sleigh{position:fixed;top:14vh;left:0;z-index:7;color:var(--acc);font-weight:700;white-space:pre;animation:swim 7s linear forwards;pointer-events:none}
-[hidden]{display:none!important}body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}input{font:inherit;color:var(--fg);background:none;border:2px solid var(--fg);border-radius:0;padding:10px;-webkit-user-select:text;user-select:text}#letter{white-space:pre-wrap;text-align:left;max-width:520px;margin:14px auto;line-height:1.5;min-height:8em}#letter::after{content:'_';animation:blink 1s steps(2) infinite}#sh,#ul{white-space:pre-line;max-width:520px;margin:12px auto;line-height:1.5}#sh{color:var(--dim)}#ul{text-align:left;white-space:pre-wrap}#bell{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));right:8px;z-index:8;padding:4px 8px;border:2px solid var(--fg);background:var(--bg)}#bell pre{font-size:11px;line-height:1}.dg{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:440px;margin:14px auto}.dg button{padding:8px 0;font-size:14px}#av{white-space:pre-wrap;max-width:520px;margin:16px auto;line-height:1.5;min-height:6em}#ga{margin:14px auto}#pc{position:absolute;left:0;top:0;margin:0;pointer-events:none}#pi,#pl{position:absolute;pointer-events:none;font-weight:700;transition:left .6s linear,top .6s ease-out}#pl{color:#f22;font-size:24px;transition:none}.cup{position:absolute;top:20px;margin:0;background:var(--bg);z-index:2;cursor:pointer;transition:left .35s,transform .3s}.cup.up{transform:translateY(-44px)}#av img{max-width:100%;margin-top:12px;-webkit-touch-callout:default;-webkit-user-select:auto;user-select:auto}#badge{position:absolute;top:-9px;right:-7px;background:var(--acc);color:var(--bg);font-size:13px;padding:0 6px}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
+[hidden]{display:none!important}body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}input{font:inherit;color:var(--fg);background:none;border:2px solid var(--fg);border-radius:0;padding:10px;-webkit-user-select:text;user-select:text}#letter{white-space:pre-wrap;text-align:left;max-width:520px;margin:14px auto;line-height:1.5;min-height:8em}#letter::after{content:'_';animation:blink 1s steps(2) infinite}#sh,#ul{white-space:pre-line;max-width:520px;margin:12px auto;line-height:1.5}#sh{color:var(--dim)}#ul{text-align:left;white-space:pre-wrap}#bell{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));right:8px;z-index:8;padding:4px 8px;border:2px solid var(--fg);background:var(--bg)}#bell pre{font-size:11px;line-height:1}.dg{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:440px;margin:14px auto}.dg button{padding:8px 0;font-size:14px}#av{white-space:pre-wrap;max-width:520px;margin:16px auto;line-height:1.5;min-height:6em}#ga{margin:14px auto}#pc{position:absolute;left:0;top:0;margin:0;pointer-events:none}#pi,#pl{position:absolute;pointer-events:none;font-weight:700;transition:left .6s linear,top .6s ease-out}#pl{color:#f22;font-size:24px;transition:none}.cup{position:absolute;top:20px;margin:0;background:var(--bg);z-index:2;cursor:pointer;transition:left .35s,transform .3s}.cup.up{transform:translateY(-44px)}#av img{max-width:100%;margin-top:12px;-webkit-touch-callout:default;-webkit-user-select:auto;user-select:auto}#nf{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:8px;z-index:14;border:2px solid var(--fg);padding:4px 8px;background:var(--bg);font-weight:700;max-width:42vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#am{position:fixed;top:calc(52px + env(safe-area-inset-top,0px));left:8px;z-index:14;padding:4px 8px;font-size:13px}#pre{position:fixed;inset:0;z-index:12;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;padding:0 8px}#pre h2{font-size:clamp(28px,9vw,56px);margin:0 0 22px;color:var(--acc);letter-spacing:.04em}#pbig{font-size:clamp(8px,2.7vw,17px);line-height:1.05;margin:0;color:var(--fg);font-weight:700}body.lock main,body.lock #bell{display:none}#badge{position:absolute;top:-9px;right:-7px;background:var(--acc);color:var(--bg);font-size:13px;padding:0 6px}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
 @media (prefers-reduced-motion:reduce){.l,.rb,.hat.fly,h1::after,#wave i,#santa{animation:none}}
 </style>
 </head>
 <body>
 <canvas id="snow"></canvas>
+<div id='pre' hidden><h2>До зимы:</h2><pre id='pbig'></pre></div><div id='nf' hidden></div><button id='am' hidden>[ админ ]</button>
 <button id='bell' aria-label='Обновления'><pre> ,-.
 /   \
 '-o-'</pre><b id='badge' hidden>*</b></button>
@@ -92,17 +93,18 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
  [==|==]
  [__|__]</pre><div id='letter'></div><a class='btn' id='tg' href='#' target='_blank' rel='noopener' hidden>[ забрать подарок в Telegram ]</a> <button id='gx'>[ закрыть ]</button></div>
 <div class='ov' id='sec' hidden><p>Секретное слово</p><input id='sw' autocomplete='off' autocapitalize='off' spellcheck='false'> <button id='sg'>[ ввод ]</button><p id='sm'></p><p id='sh'></p><button id='pb' hidden>[ мой питомец ]</button> <button id='sx'>[ закрыть ]</button></div>
-<div class='ov' id='adm' hidden><p>[ админ-панель ]</p><button id='nyb'>[ Новый год ]</button> <button id='tb'>[ Тест колокольчика ]</button> <button id='td'>[ Открыть все двери ]</button><p>Запустит отсчёт: 10 секунд до Нового года. Только у тебя, после перезагрузки всё вернётся.</p><button id='adx'>[ закрыть ]</button></div>
+<div class='ov' id='adm' hidden><p>[ админ-панель ]</p><button id='ao'>[ Открыть сайт локально ]</button> <button id='nyb'>[ Новый год ]</button> <button id='tb'>[ Тест колокольчика ]</button> <button id='td'>[ Открыть все двери ]</button><p>Запустит отсчёт: 10 секунд до Нового года. Только у тебя, после перезагрузки всё вернётся.</p><button id='ar'>[ Сбросить мой прогресс ]</button> <button id='adx'>[ закрыть ]</button></div>
 <div class='ov' id='adv' hidden><p>[ адвент-календарь ]</p><div class='dg' id='dg'></div><div id='av'></div><button id='axx'>[ закрыть ]</button></div>
 <div class='ov' id='play' hidden style='padding:0;overflow:hidden;touch-action:none'><div id='pt' style='position:absolute;top:8px;left:0;right:0;z-index:2'></div><pre id='pc'></pre><span id='pi' hidden></span><span id='pl' hidden>*</span></div>
 <div class='ov' id='games' hidden><p>[ игры ]</p><div id='gl'></div><div id='ga'></div><button id='gxx'>[ закрыть ]</button></div>
 <div class='ov' id='egg' hidden><pre id='eart' style='cursor:pointer'></pre><p id='etxt' style='white-space:pre-line'></p><input id='en' maxlength='16' placeholder='имя питомца' hidden> <button id='eb' hidden>[ назвать ]</button><p><button id='ex'>[ закрыть ]</button></p></div>
 <div class='ov' id='upd' hidden><p>[ обновления ]</p><div id='ul'></div><button id='ux'>[ закрыть ]</button></div>
+<div class='ov' id='nk' hidden style='z-index:30'><p>Как тебя зовут?</p><p style='color:var(--dim)'>Ник вводится один раз и потом не меняется.</p><input id='ni' maxlength='16' autocomplete='off' spellcheck='false'> <button id='nb'>[ войти ]</button><p id='ne'></p></div>
 <div id="toast"></div>
 <script>
 const $=s=>document.querySelector(s),R=a=>a[Math.random()*a.length|0];
 const who=()=>$('#who').textContent;
-let frozen=false,sim=0;const now=()=>Date.now()+sim,NY=new Date('2027-01-01T00:00:00+02:00'),isNY=()=>now()>=NY||location.hash==='#ny';
+let frozen=false,sim=0,dayOff=0,localOpen=false;const OPEN=new Date('2026-12-01T00:00:00+02:00'),now=()=>Date.now()+sim,NY=new Date('2027-01-01T00:00:00+02:00'),isNY=()=>now()>=NY||location.hash==='#ny';
 
 /* ёлка */
 (function(){
@@ -224,11 +226,13 @@ document.addEventListener('click',e=>{
 /* кот, домик, подарок */
 
 const BS=String.fromCharCode(92),LAST=Date.UTC(2026,11,31)/864e5,KEY='sonya-cat-v1',TG='https://t.me/Kriogenka?text='+encodeURIComponent('Гони подарок');
-const dayNum=()=>{const p={};new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Kiev',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(x=>p[x.type]=x.value);return Date.UTC(+p.year,+p.month-1,+p.day)/864e5};
+const dayNum=()=>{const p={};new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Kiev',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(x=>p[x.type]=x.value);return Date.UTC(+p.year,+p.month-1,+p.day)/864e5+dayOff};
 let st={s:dayNum(),f:0},hEyes='o.o';
 let okLS=true,raw=null;const ck=()=>{const m=document.cookie.match(/(?:^|; )sonya=([^;]*)/);return m?decodeURIComponent(m[1]):null};
 try{raw=localStorage.getItem(KEY)}catch(e){okLS=false}
 try{const r=JSON.parse(raw||ck()||'null');if(r&&r.s)st=r}catch(e){}
+if(Date.now()>=OPEN&&st.ep!=='live'){st={s:0,f:0,ep:'live'};try{localStorage.removeItem('sonya-santa')}catch(e){}}
+st.s=Date.UTC(2026,11,1)/864e5;
 (st.e||[]).forEach(x=>found.add(x));$('#score').textContent=`пасхалок найдено: ${found.size}/8`;
 const save=()=>{const j=JSON.stringify(st);try{localStorage.setItem(KEY,j)}catch(e){okLS=false}try{document.cookie='sonya='+encodeURIComponent(j)+'; max-age=31536000; path=/; SameSite=Lax'}catch(e){}};save();
 const total=()=>Math.max(0,LAST-st.s+1),owed=()=>Math.max(0,Math.min(dayNum(),LAST)-st.s+1),hungry=()=>st.f<owed(),say=t=>$('#say').textContent=t;
@@ -475,7 +479,7 @@ $('#td').onclick=()=>{testDoors=true;$('#adm').hidden=true;toast('Все две�
 $('#tb').onclick=()=>{testBell=true;bell();$('#adm').hidden=true;toast('Тестовое обновление добавлено, нажми на колокольчик')};
 bell();
 function trySecret(){const v=$('#sw').value.trim();
-  if(v==='43893j228'){$('#sec').hidden=true;$('#adm').hidden=false;return}
+  
   const i=WORDS.findIndex(w=>w.ok.includes(norm(v)));if(i>=0){st.w=[...new Set([...(st.w||[]),i])];save();hints();if(i===0){$('#sec').hidden=true;taps=0;eggView();$('#egg').hidden=false}else $('#sm').textContent='Верно! Скоро тут появится сюрприз.';return}
   $('#sm').textContent='Не то слово. Мяу.'}
 $('#sk').onclick=()=>{hints();$('#pb').hidden=!(st.w||[]).includes(0);$('#sw').value='';$('#sm').textContent='';$('#sec').hidden=false;$('#sw').focus()};
@@ -484,6 +488,36 @@ $('#sx').onclick=()=>{$('#sec').hidden=true};$('#adx').onclick=()=>{$('#adm').hi
 $('#nyb').onclick=()=>{sim=NY-Date.now()-10000;$('#adm').hidden=true;scrollTo(0,0);toast('10 секунд до Нового года!')};
 checkGift();setInterval(checkGift,1000);
 ['copy','cut','contextmenu','selectstart','dragstart'].forEach(v=>document.addEventListener(v,e=>{if(!e.target.tagName||e.target.tagName!=='INPUT')e.preventDefault()}));
+
+/* ник, админ, экран «До зимы» */
+const GLY={'0':'###|#.#|#.#|#.#|###','1':'.#.|##.|.#.|.#.|###','2':'###|..#|###|#..|###','3':'###|..#|###|..#|###','4':'#.#|#.#|###|..#|..#','5':'###|#..|###|..#|###','6':'###|#..|###|#.#|###','7':'###|..#|..#|..#|..#','8':'###|#.#|###|#.#|###','9':'###|#.#|###|..#|###',':':'.|#|.|#|.'};
+const big=t=>[0,1,2,3,4].map(r=>t.split('').map(ch=>GLY[ch].split('|')[r].split('.').join(' ')).join(' ')).join('\n');
+const isLocked=()=>Date.now()<OPEN&&!localOpen;
+function lockUI(){
+  const L=isLocked();document.body.classList.toggle('lock',L);$('#pre').hidden=!L;
+  if(L){const s=Math.max(0,Math.floor((OPEN-Date.now())/1000)),p=x=>String(x).padStart(2,'0');
+    $('#pbig').textContent=big(`${p(Math.floor(s/86400))}:${p(Math.floor(s%86400/3600))}:${p(Math.floor(s%3600/60))}:${p(s%60)}`)}
+}
+let wasLocked=isLocked();
+setInterval(()=>{const L=isLocked();if(wasLocked&&!L&&!localOpen&&Date.now()>=OPEN)location.reload();wasLocked=L;lockUI()},1000);
+const NKEY='sonya-nick';
+let nick=null;try{nick=localStorage.getItem(NKEY)}catch(e){}
+if(!nick){const m=document.cookie.match(/(?:^|; )sonyan=([^;]*)/);if(m)nick=decodeURIComponent(m[1])}
+const isAdmin=()=>!!nick&&nick.trim().toLowerCase()==='kriogenka';
+function nickUI(){$('#nf').hidden=!nick;$('#nf').textContent=nick||'';$('#am').hidden=!isAdmin();$('#nk').hidden=!!nick;lockUI()}
+function setNick(){
+  if(nick)return;const v=$('#ni').value.trim();
+  if(!v){$('#ne').textContent='Введи ник';return}
+  nick=v.slice(0,16);
+  try{localStorage.setItem(NKEY,nick)}catch(e){}
+  try{document.cookie='sonyan='+encodeURIComponent(nick)+'; max-age=31536000; path=/; SameSite=Lax'}catch(e){}
+  nickUI();
+}
+$('#nb').onclick=setNick;$('#ni').onkeydown=e=>{if(e.key==='Enter')setNick()};
+$('#am').onclick=()=>{$('#adm').hidden=false};
+$('#ao').onclick=()=>{const r=dayNum();localOpen=true;dayOff=Math.max(0,Date.UTC(2026,11,1)/864e5-r);$('#adm').hidden=true;lockUI();bowl();bell();toast('Сайт открыт только у тебя, до перезагрузки')};
+$('#ar').onclick=()=>{if(!confirm('Сбросить прогресс кота, пасхалки и питомца?'))return;try{localStorage.removeItem(KEY);localStorage.removeItem('sonya-santa')}catch(e){}document.cookie='sonya=; max-age=0; path=/';location.reload()};
+nickUI();
 </script>
 </body>
 </html>
