@@ -53,7 +53,7 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 .bub{position:absolute;color:var(--fg);animation:rise 3s ease-in forwards}
 @keyframes rise{to{transform:translateY(-60vh);opacity:0}}
 .sleigh{position:fixed;top:14vh;left:0;z-index:7;color:var(--acc);font-weight:700;white-space:pre;animation:swim 7s linear forwards;pointer-events:none}
-[hidden]{display:none!important}body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}input{font:inherit;color:var(--fg);background:none;border:2px solid var(--fg);border-radius:0;padding:10px;-webkit-user-select:text;user-select:text}#letter{white-space:pre-wrap;text-align:left;max-width:520px;margin:14px auto;line-height:1.5;min-height:8em}#letter::after{content:'_';animation:blink 1s steps(2) infinite}#sh,#ul{white-space:pre-line;max-width:520px;margin:12px auto;line-height:1.5}#sh{color:var(--dim)}#ul{text-align:left;white-space:pre-wrap}#bell{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));right:8px;z-index:8;padding:4px 8px;border:2px solid var(--fg);background:var(--bg)}#bell pre{font-size:11px;line-height:1}#badge{position:absolute;top:-9px;right:-7px;background:var(--acc);color:var(--bg);font-size:13px;padding:0 6px}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
+[hidden]{display:none!important}body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}input{font:inherit;color:var(--fg);background:none;border:2px solid var(--fg);border-radius:0;padding:10px;-webkit-user-select:text;user-select:text}#letter{white-space:pre-wrap;text-align:left;max-width:520px;margin:14px auto;line-height:1.5;min-height:8em}#letter::after{content:'_';animation:blink 1s steps(2) infinite}#sh,#ul{white-space:pre-line;max-width:520px;margin:12px auto;line-height:1.5}#sh{color:var(--dim)}#ul{text-align:left;white-space:pre-wrap}#bell{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));right:8px;z-index:8;padding:4px 8px;border:2px solid var(--fg);background:var(--bg)}#bell pre{font-size:11px;line-height:1}.dg{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:440px;margin:14px auto}.dg button{padding:8px 0;font-size:14px}#av{white-space:pre-wrap;max-width:520px;margin:16px auto;line-height:1.5;min-height:6em}#ga{margin:14px auto}#pc{position:absolute;left:0;top:0;margin:0;pointer-events:none}#pi,#pl{position:absolute;pointer-events:none;font-weight:700;transition:left .6s linear,top .6s ease-out}#pl{color:#f22;font-size:24px;transition:none}.cup{position:absolute;top:20px;margin:0;background:var(--bg);z-index:2;cursor:pointer;transition:left .35s,transform .3s}.cup.up{transform:translateY(-44px)}#av img{max-width:100%;margin-top:12px;-webkit-touch-callout:default;-webkit-user-select:auto;user-select:auto}#badge{position:absolute;top:-9px;right:-7px;background:var(--acc);color:var(--bg);font-size:13px;padding:0 6px}.ov{position:fixed;inset:0;z-index:15;background:var(--bg);overflow:auto;text-align:center;padding:30px 16px calc(30px + env(safe-area-inset-bottom,0px))}.ov pre{margin:14px 6px}.ov p{margin:12px 0}#stat{white-space:pre}.btn{font-weight:700;border:2px solid var(--fg);padding:10px 14px;color:var(--fg);text-decoration:none;display:inline-block}button:disabled{opacity:.4;cursor:default}button:disabled:hover{background:none;color:var(--fg)}.sky{letter-spacing:.3em;margin:0 0 14px}.sky b{color:var(--acc)}#under{position:relative;margin-top:10px;min-height:2px}#gift{color:var(--acc);font-weight:700;cursor:pointer}#santa{position:absolute;left:calc(50% + 6ch);top:0;font-size:13px;color:var(--acc);pointer-events:none;animation:tip 9s linear forwards,bob .5s steps(2) infinite}@keyframes tip{0%{transform:translateX(0)}60%{transform:translateX(26vw)}65%{transform:translateX(27vw) rotate(-25deg)}70%{transform:translateX(28vw) rotate(0)}100%{transform:translateX(70vw)}}@keyframes bob{50%{translate:0 -4px}}
 @media (prefers-reduced-motion:reduce){.l,.rb,.hat.fly,h1::after,#wave i,#santa{animation:none}}
 </style>
 </head>
@@ -83,6 +83,7 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
 </div>
 <div id="cd" data-e="clock"></div>
 <p id="score">пасхалок найдено: 0/8</p>
+<p><button id='ab'>[ календарь ]</button> <button id='cb'>[ играть с котом ]</button> <button id='gb'>[ игры ]</button></p>
 <p><button id='sk'>[ ? ]</button></p>
 </main>
 <div id="water"><div id="wave"></div></div>
@@ -91,7 +92,10 @@ button:hover,button:focus-visible{background:var(--fg);color:var(--bg);outline:n
  [==|==]
  [__|__]</pre><div id='letter'></div><a class='btn' id='tg' href='#' target='_blank' rel='noopener' hidden>[ забрать подарок в Telegram ]</a> <button id='gx'>[ закрыть ]</button></div>
 <div class='ov' id='sec' hidden><p>Секретное слово</p><input id='sw' autocomplete='off' autocapitalize='off' spellcheck='false'> <button id='sg'>[ ввод ]</button><p id='sm'></p><p id='sh'></p><button id='pb' hidden>[ мой питомец ]</button> <button id='sx'>[ закрыть ]</button></div>
-<div class='ov' id='adm' hidden><p>[ админ-панель ]</p><button id='nyb'>[ Новый год ]</button> <button id='tb'>[ Тест колокольчика ]</button><p>Запустит отсчёт: 10 секунд до Нового года. Только у тебя, после перезагрузки всё вернётся.</p><button id='adx'>[ закрыть ]</button></div>
+<div class='ov' id='adm' hidden><p>[ админ-панель ]</p><button id='nyb'>[ Новый год ]</button> <button id='tb'>[ Тест колокольчика ]</button> <button id='td'>[ Открыть все двери ]</button><p>Запустит отсчёт: 10 секунд до Нового года. Только у тебя, после перезагрузки всё вернётся.</p><button id='adx'>[ закрыть ]</button></div>
+<div class='ov' id='adv' hidden><p>[ адвент-календарь ]</p><div class='dg' id='dg'></div><div id='av'></div><button id='axx'>[ закрыть ]</button></div>
+<div class='ov' id='play' hidden style='padding:0;overflow:hidden;touch-action:none'><div id='pt' style='position:absolute;top:8px;left:0;right:0;z-index:2'></div><pre id='pc'></pre><span id='pi' hidden></span><span id='pl' hidden>*</span></div>
+<div class='ov' id='games' hidden><p>[ игры ]</p><div id='gl'></div><div id='ga'></div><button id='gxx'>[ закрыть ]</button></div>
 <div class='ov' id='egg' hidden><pre id='eart' style='cursor:pointer'></pre><p id='etxt' style='white-space:pre-line'></p><input id='en' maxlength='16' placeholder='имя питомца' hidden> <button id='eb' hidden>[ назвать ]</button><p><button id='ex'>[ закрыть ]</button></p></div>
 <div class='ov' id='upd' hidden><p>[ обновления ]</p><div id='ul'></div><button id='ux'>[ закрыть ]</button></div>
 <div id="toast"></div>
@@ -251,7 +255,7 @@ $('#back').onclick=()=>{$('#house').hidden=true;bowl()};
 $('#feed').onclick=()=>{if(!hungry())return;st.f++;save();hEyes='^.^';say('Ням-ням-ням!');paint();setTimeout(()=>{hEyes='o.o';say(mood());paint()},1400)};
 const LET=[['t',`С новым годом, Соня =)
 
-`],['t',`Я не буду расписывать огромные поздравления. Просто скажу спасибо тебе за этот год, с тобой очень интересно общаться. Ты веселая, добрая, смешная, неловкая, крутая и вообще лучший человек, которого я встречал за свою жизнь. Надеюсь, этот новый год будет еще лучше, чем прошлый =)
+`],['t',`Я не буду расписывать огромные поздравления. Просто скажу спасибо тебе за этот год, с тобой очень интересно общаться. Ты веселая, добрая, смешная, неловкая, крутая и вообще один из самых классных людей, с которыми я общался. Надеюсь, этот новый год будет еще лучше, чем прошлый =)
 
 `],['t',`И кстати, прости, если я что-то не так говорил и за мои «умные шутки».
 
@@ -290,10 +294,12 @@ const norm=s=>s.toLowerCase().replace(/ё/g,'е').replace(/\s+/g,' ').trim();
 function hints(){$('#sh').textContent=WORDS.map((w,i)=>`Слово ${i+1}${(st.w||[]).includes(i)?' ✓':''}. Подсказка: ${st.f>=w.need?w.h:`откроется после ${w.need} кормлений кота (сейчас ${Math.min(st.f,w.need)})`}`).join(`
 `)}
 const UPDATES=[];
+let testDoors=false;const topen=new Set();
+const DOORS=[{k:'toy',v:'ball'},{k:'f'},{k:'f'},{k:'talon'},{k:'f'},{k:'toy',v:'mouse'},{k:'game',v:'rps'},{k:'f'},{k:'f'},{k:'talon'},{k:'f'},{k:'laser'},{k:'f'},{k:'game',v:'cups'},{k:'f'},{k:'talon'},{k:'toy',v:'fish'},{k:'f'},{k:'f'},{k:'game',v:'dino'},{k:'f'},{k:'talon'},{k:'f'},{k:'toy',v:'yarn'},{k:'f'},{k:'talon'},{k:'f'},{k:'f'},{k:'f'},{k:'f'},{k:'final'}];
 const MON=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
 let testBell=false;
 const dn=d=>{const p=d.split('-');return Date.UTC(+p[0],+p[1]-1,+p[2])/864e5};
-const visUpd=()=>UPDATES.filter(u=>dn(u.d)>=dn('2026-12-01')&&dn(u.d)<=dayNum()).concat(testBell?[{d:'2026-12-01',t:'Тестовое обновление: так будет выглядеть новая запись.'}]:[]);
+const visUpd=()=>UPDATES.concat(DOORS.map((_,i)=>({d:'2026-12-'+String(i+1).padStart(2,'0'),t:'в адвент-календаре открылась дверь №'+(i+1)}))).filter(u=>dn(u.d)>=dn('2026-12-01')&&dn(u.d)<=dayNum()).concat(testBell?[{d:'2026-12-01',t:'Тестовое обновление: так будет выглядеть новая запись.'}]:[]).sort((a,b)=>dn(a.d)-dn(b.d));
 function bell(){$('#badge').hidden=!(visUpd().length>(st.u||0))}
 $('#bell').onclick=()=>{const v=visUpd();$('#ul').textContent=v.length?v.slice().reverse().map(u=>{const p=u.d.split('-');return `${+p[2]} ${MON[+p[1]-1]}: ${u.t}`}).join(`
 
@@ -318,6 +324,154 @@ $('#eart').onclick=()=>{if(st.p)return;taps++;if(taps>=3){st.p={n:''};save();bur
 $('#eb').onclick=()=>{const n=$('#en').value.trim().slice(0,16);if(!n){toast('Придумай имя');return}st.p.n=n;save();eggView();toast(n+' теперь с тобой!')};
 $('#ex').onclick=()=>{$('#egg').hidden=true};
 $('#pb').onclick=()=>{$('#sec').hidden=true;taps=0;eggView();$('#egg').hidden=false};
+const TALONS=['Идём играть в любую игру, какую захочешь','Смотрим любой сериал/фильм и т.д., какой захочешь','Идём играть в любую игру, какую захочешь','Смотрим любой сериал/фильм и т.д., какой захочешь','Идём играть в любую игру, какую захочешь'];
+const ART=[` ,^,
+(@@@)
+ '-'`,`  *
+ -*-
+  *`,`  ^
+ /^${BS}
+/^^^${BS}
+  |`,` *  .  *
+  . * .
+ *  .  *`,`  (*)
+[=|=]
+[_|_]`,` /${BS}_/${BS}
+( o.o )
+ > ^ <`];
+const GN={rps:'Камень, лапка, бумага',cups:'Стаканчики',dino:'Динозаврик'};
+const TOYS={ball:['(o)','мячик'],mouse:['<:3)~','мышка'],fish:['><>','рыбка'],yarn:['(@)~','клубок']};
+const opened=()=>new Set([...(st.o||[]),...topen]);
+const have=(k,v)=>[...opened()].some(n=>{const d=DOORS[n-1];return d&&d.k===k&&(v===undefined||d.v===v)});
+function grid(){const g=$('#dg'),base=dn('2026-12-01'),op=opened();g.innerHTML='';
+  DOORS.forEach((d,i)=>{const n=i+1,b=document.createElement('button');b.textContent=n+(op.has(n)?'✓':'');b.disabled=!(testDoors||dayNum()>=base+i);b.onclick=()=>openDoor(n);g.appendChild(b)})}
+function talonPic(n,txt){
+  const W=900,H=420,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d'),F='"IBM Plex Mono",monospace';
+  x.fillStyle='#0a1030';x.fillRect(0,0,W,H);
+  x.strokeStyle='#ff9f43';x.lineWidth=4;x.setLineDash([14,10]);x.strokeRect(24,24,W-48,H-48);x.setLineDash([]);
+  x.textAlign='center';x.fillStyle='#ff9f43';x.font='bold 52px '+F;x.fillText('ТАЛОН №'+n,W/2,110);
+  x.fillStyle='#d6e8ff';x.font='32px '+F;
+  let line='',y=190;
+  for(const w of txt.split(' ')){const t=line?line+' '+w:w;if(x.measureText(t).width>W-140){x.fillText(line,W/2,y);y+=46;line=w}else line=t}
+  x.fillText(line,W/2,y);
+  x.fillStyle='#7f95cf';x.font='24px '+F;x.fillText('скинь мне это со словами «давай в это»',W/2,H-60);
+  c.toBlob(async b=>{
+    const f=new File([b],'talon-'+n+'.png',{type:'image/png'});
+    if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f]});return}catch(e){if(e.name==='AbortError')return}}
+    const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=f.name;document.body.appendChild(a);a.click();a.remove();
+    const im=document.createElement('img');im.src=u;$('#av').appendChild(im);
+  });
+}
+function openDoor(n){
+  const d=DOORS[n-1],c=$('#av');
+  if(testDoors)topen.add(n);else if(!(st.o||[]).includes(n)){st.o=[...(st.o||[]),n];save()}
+  const cnt=k=>DOORS.slice(0,n).filter(x=>x.k===k).length;
+  let t;
+  if(d.k==='toy')t=`Дверь ${n}: новая игрушка для кота: ${TOYS[d.v][1]}!\nИграть можно на главной: «играть с котом».`;
+  else if(d.k==='laser')t=`Дверь ${n}: лазерная указка!\nОна тоже в «играть с котом».`;
+  else if(d.k==='game')t=`Дверь ${n}: новая игра для питомца: ${GN[d.v]}!\nОна в разделе «игры».`;
+  else if(d.k==='talon')t=`Дверь ${n}: ТАЛОН №${cnt('talon')}\n\n${TALONS[cnt('talon')-1]||'Что он даёт, расскажу позже.'}\n\nСохрани картинкой и скинь мне со словами «давай в это».`;
+  else if(d.k==='final')t='Дверь 31\n\nПозови меня в мм2';
+  else{const i=cnt('f')-1;t=`Дверь ${n}\n\n${ART[i%ART.length]}`}
+  c.style.fontSize=d.k==='final'?'24px':'';c.textContent=t;if(d.k==='talon'){const k=cnt('talon'),b=document.createElement('button');b.textContent='[ сохранить картинкой ]';b.onclick=()=>talonPic(k,TALONS[k-1]||'Талон');c.appendChild(document.createElement('br'));c.appendChild(b)}grid();
+}
+let gStop=()=>{},dJump=null;
+document.addEventListener('keydown',e=>{if(dJump&&(e.key===' '||e.key==='ArrowUp')){e.preventDefault();dJump()}});
+function rps(){
+  const A=$('#ga'),O=['камень','лапка','бумага'],nm=(st.p&&st.p.n)||'Питомец';let w=0,l=0;
+  A.innerHTML=`<p>Бросай:</p><p>${O.map((o,i)=>`<button data-r='${i}'>[ ${o} ]</button>`).join(' ')}</p><p id='rs'></p><p id='rc'></p>`;
+  A.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{
+    const me=+b.dataset.r,pe=Math.random()*3|0,d=(pe-me+3)%3;
+    if(d===1)w++;else if(d===2)l++;
+    $('#rs').textContent=`Ты: ${O[me]}. ${nm}: ${O[pe]}. `+(d===0?'Ничья.':d===1?'Ты выиграла!':'Победа за питомцем.');
+    $('#rc').textContent=`счёт: ты ${w} : ${l} ${nm}`})}
+function shell(){
+  const A=$('#ga'),sl=ms=>new Promise(r=>setTimeout(r,ms));let n=3;
+  async function round(){
+    A.innerHTML=`<div id='cs' style='position:relative;height:120px;width:${n*80}px;margin:24px auto'></div><p id='gs'></p>`;
+    const C=$('#cs'),G=$('#gs'),slot=[...Array(n).keys()],b=Math.random()*n|0,cups=[];
+    const ball=document.createElement('div');ball.textContent='o';ball.style.cssText='position:absolute;top:58px;font-weight:700;z-index:1;transition:left .35s';C.appendChild(ball);
+    const put=()=>{cups.forEach((c,i)=>{c.style.left=(slot[i]*80+10)+'px'});ball.style.left=(slot[b]*80+30)+'px'};
+    for(let i=0;i<n;i++){const c=document.createElement('pre');c.className='cup';c.textContent=` ___ \n|   |\n|___|`;cups.push(c);C.appendChild(c)}
+    put();G.textContent='Смотри, где мячик...';
+    await sl(600);cups[b].classList.add('up');await sl(1200);cups[b].classList.remove('up');await sl(500);
+    G.textContent='Перемешиваю...';
+    for(let k=0;k<5+n*2;k++){const i=Math.random()*n|0;let j;do{j=Math.random()*n|0}while(j===i);[slot[i],slot[j]]=[slot[j],slot[i]];put();await sl(Math.max(230,450-n*35))}
+    G.textContent='Под каким стаканчиком мячик?';
+    cups.forEach((c,i)=>{c.onclick=()=>{
+      cups.forEach(x=>x.onclick=null);c.classList.add('up');cups[b].classList.add('up');
+      const win=i===b;n=win?Math.min(6,n+1):3;
+      G.textContent=win?`Верно! Дальше стаканчиков будет ${n}.`:'Мимо. Мячик был под другим. Начнём с 3 стаканчиков.';
+      const nb=document.createElement('button');nb.textContent='[ ещё раз ]';nb.onclick=round;G.appendChild(document.createElement('br'));G.appendChild(nb)}});
+  }
+  round();
+}
+function dino(){
+  const A=$('#ga'),W=34,px=3;
+  A.innerHTML=`<pre id='ds'></pre><p id='dt'>Нажми на поле или пробел, чтобы прыгать</p>`;
+  let y=0,vy=0,ob=[],sc=0,best=+(st.d||0),alive=true,iv;
+  const draw=()=>{const R=[];for(let r=3;r>=0;r--){let s='';for(let x=0;x<W;x++){let c=' ';for(const o of ob)if(o.x===x&&r<o.h)c='|';if(x===px&&Math.round(y)===r)c='@';s+=c}R.push(s)}R.push('='.repeat(W));$('#ds').textContent=R.join(`\n`)};
+  const tick=()=>{
+    y+=vy;vy-=.28;if(y<=0){y=0;vy=0}
+    ob.forEach(o=>o.x--);ob=ob.filter(o=>o.x>=0);
+    const last=ob[ob.length-1];
+    if(!last||last.x<W-13-Math.random()*9)ob.push({x:W-1,h:Math.random()<.35?2:1});
+    sc++;
+    if(ob.some(o=>o.x===px&&Math.round(y)<o.h)){alive=false;clearInterval(iv);if(sc>best){best=sc;st.d=best;save()}$('#dt').textContent=`Бум! Счёт ${sc}, рекорд ${best}. Нажми, чтобы начать заново`}
+    else $('#dt').textContent=`Счёт: ${sc}  рекорд: ${best}`;
+    draw();
+  };
+  const start=()=>{y=0;vy=0;ob=[];sc=0;alive=true;clearInterval(iv);iv=setInterval(tick,75)};
+  const jump=()=>{if(!alive)return start();if(y===0)vy=1.4};
+  dJump=jump;gStop=()=>{clearInterval(iv);dJump=null};A.onclick=jump;start();
+}
+function gamesOpen(){
+  gStop();gStop=()=>{};const L=$('#gl'),A=$('#ga');L.innerHTML='';A.innerHTML='';A.onclick=null;
+  const ks=Object.keys(GN).filter(k=>have('game',k));
+  ks.forEach(k=>{const b=document.createElement('button');b.textContent=`[ ${GN[k]} ]`;b.onclick=()=>{gStop();gStop=()=>{};A.onclick=null;({rps,cups:shell,dino})[k]()};L.appendChild(b);L.append(' ')});
+  if(!ks.length)L.textContent='Игр пока нет. Они спрятаны в адвент-календаре.';
+  $('#games').hidden=false;
+}
+const P={toy:null,laser:false,tx:null,ty:0,x:0,y:0,mx:0,my:0,run:false};
+const catP=e=>` /${BS}_/${BS}\n( ${e} )\n > ^ <`;
+const mvDot=()=>{const d=$('#pl');d.style.left=P.mx-6+'px';d.style.top=P.my-12+'px'};
+function loop(){
+  if(!P.run)return;
+  let e='o.o',tx=null,ty=0;
+  if(P.laser&&!$('#pl').hidden){tx=P.mx;ty=P.my}else if(P.tx!==null&&!$('#pi').hidden){tx=P.tx;ty=P.ty}
+  if(tx!==null){const dx=tx-P.x,dy=ty-P.y,d=Math.hypot(dx,dy);
+    if(d>26){const s=Math.min(8,d*.07+1.6);P.x+=dx/d*s;P.y+=dy/d*s;e=dx<0?'<.<':'>.>'}
+    else{e=Math.floor(Date.now()/350)%2?'^.^':'o.o';if(!P.laser)$('#pi').style.transform=`translate(${Math.random()*8-4}px,${Math.random()*6-3}px)`}}
+  const c=$('#pc');c.textContent=catP(e);c.style.left=P.x-32+'px';c.style.top=P.y-25+'px';
+  requestAnimationFrame(loop);
+}
+function playOpen(){
+  const T=$('#pt');T.innerHTML='';
+  const add=(t,f)=>{const b=document.createElement('button');b.textContent=t;b.onclick=f;T.appendChild(b);T.append(' ')};
+  const ks=Object.keys(TOYS).filter(k=>have('toy',k));
+  ks.forEach(k=>add(`[ ${TOYS[k][1]} ]`,()=>{P.toy=k;P.laser=false;$('#pl').hidden=true;toast('Нажми на экран, чтобы бросить игрушку')}));
+  if(have('laser'))add('[ указка ]',()=>{P.laser=true;P.toy=null;$('#pi').hidden=true;P.mx=innerWidth/2;P.my=innerHeight/2;mvDot();$('#pl').hidden=false;toast('Води пальцем: кот погонится за точкой')});
+  add('[ закрыть ]',()=>{P.run=false;$('#play').hidden=true});
+  if(!ks.length&&!have('laser'))toast('Игрушек пока нет, они спрятаны в календаре');
+  P.x=innerWidth/2;P.y=innerHeight/2;P.tx=null;P.toy=null;P.laser=false;
+  $('#pi').hidden=true;$('#pl').hidden=true;$('#play').hidden=false;
+  if(!P.run){P.run=true;loop()}
+}
+$('#play').addEventListener('pointerdown',ev=>{
+  if(ev.target.closest('button'))return;
+  if(P.laser){P.mx=ev.clientX;P.my=ev.clientY;mvDot();return}
+  if(!P.toy)return;
+  const i=$('#pi');i.hidden=false;i.textContent=TOYS[P.toy][0];i.style.transform='';
+  i.style.transition='none';i.style.left=innerWidth/2+'px';i.style.top=innerHeight-40+'px';void i.offsetWidth;
+  i.style.transition='';i.style.left=ev.clientX-12+'px';i.style.top=ev.clientY-10+'px';
+  P.tx=ev.clientX;P.ty=ev.clientY;
+});
+$('#play').addEventListener('pointermove',ev=>{if(P.laser){P.mx=ev.clientX;P.my=ev.clientY;mvDot()}});
+$('#ab').onclick=()=>{$('#av').textContent='';grid();$('#adv').hidden=false};
+$('#axx').onclick=()=>{$('#adv').hidden=true};
+$('#gb').onclick=gamesOpen;$('#gxx').onclick=()=>{gStop();$('#games').hidden=true};
+$('#cb').onclick=playOpen;
+$('#td').onclick=()=>{testDoors=true;$('#adm').hidden=true;toast('Все двери доступны до перезагрузки')};
 $('#tb').onclick=()=>{testBell=true;bell();$('#adm').hidden=true;toast('Тестовое обновление добавлено, нажми на колокольчик')};
 bell();
 function trySecret(){const v=$('#sw').value.trim();
